@@ -12,6 +12,9 @@ background = pygame.image.load("./img/background.png")
 block_side = pygame.image.load("./img/block.png") # 300 X 200
 block_center = pygame.image.load("./img/block2.png") # 360 X 10
 block_center2 = pygame.image.load("./img/block3.png") # 360 X 100
+block_s = pygame.image.load("./img/block4.png") # 25 x 25
+block_end = pygame.image.load("./img/block5.png")
+end = pygame.image.load("./img/end.png")
 
 #캐릭터
 character = pygame.image.load("./img/end.png") # 10X10
@@ -33,7 +36,7 @@ before_y = 540 - character_height - 10
 
 time_jump = 0
 end_time_jump = 0
-
+mappage = 1
 
 running = True
 
@@ -69,48 +72,78 @@ while running:
 
     to_y += 1
 
-    if y_pos > 520:
-        y_pos = 520
-        to_x = 0
-
     if x_pos < 0:
         x_pos = 0
 
     if x_pos > scrWidth - 10:
         x_pos = scrWidth - 10
 
-    if y_pos > 330:
-        if x_pos < 300:
-            if before_x > 300:
-                to_x *= -1
-            elif before_x < 300:
-                y_pos = 330
-                to_x = 0
-        elif x_pos > 650:
-            if before_x < 650:
-                to_x *= -1
-            elif before_x > 650:
-                y_pos = 330
-                to_x = 0
-
-    if y_pos < 200 and before_y > 200 and x_pos > 300 and x_pos < 650:
-        to_y *= -1
-    elif y_pos > 100 and before_y < 100 and x_pos > 300 and x_pos < 650:
-        y_pos = 90
-        to_x = 0
     
-    if y_pos < 200 and y_pos > 100 and  x_pos > 300 and before_x < 300:
-        to_x *= -1
-    elif y_pos < 200 and y_pos > 100 and  x_pos < 660 and before_x > 660:
-        to_x *= -1
+    if mappage == 2:
+        if y_pos < 425 and y_pos > 400 and  x_pos > 100 and before_x < 100:
+            to_x *= -1
+        elif y_pos < 425 and y_pos > 400 and  x_pos < 125 and before_x > 125:
+            to_x *= -1
+        
+        if y_pos < 425 and before_y > 425 and x_pos > 100 and x_pos < 125:
+            to_y *= -1
+        elif y_pos > 390 and before_y < 390 and x_pos > 100 and x_pos < 125:
+            y_pos = 390
+            to_x = 0
+
+        screen.blit(background, (0, 0))
+        screen.blit(block_s, (200, 212))
+        screen.blit(block_s, (100, 400))
+        screen.blit(block_s, (500, 350))
+        screen.blit(block_s, (850, 200))
+        screen.blit(block_end, (825, 50))
+        screen.blit(end, (840, 35))
+        screen.blit(character, (x_pos, y_pos))
+        if y_pos > 540:
+            mappage = 1
+            y_pos = 0
+
+    elif mappage == 1:
+        if y_pos > 520:
+            y_pos = 520
+            to_x = 0
+
+        if y_pos > 330:
+            if x_pos < 300:
+                if before_x > 300:
+                    to_x *= -1
+                elif before_x < 300:
+                    y_pos = 330
+                    to_x = 0
+            elif x_pos > 650:
+                if before_x < 650:
+                    to_x *= -1
+                elif before_x > 650:
+                    y_pos = 330
+                    to_x = 0
+
+        if y_pos < 200 and before_y > 200 and x_pos > 300 and x_pos < 650:
+            to_y *= -1
+        elif y_pos > 100 and before_y < 100 and x_pos > 300 and x_pos < 650:
+            y_pos = 90
+            to_x = 0
+        
+        if y_pos < 200 and y_pos > 100 and  x_pos > 300 and before_x < 300:
+            to_x *= -1
+        elif y_pos < 200 and y_pos > 100 and  x_pos < 660 and before_x > 660:
+            to_x *= -1
+
+        if y_pos < -10:
+            mappage = 2
+            y_pos = 540
 
 
-    screen.blit(background, (0, 0))
-    screen.blit(block_side, (0,340))
-    screen.blit(block_side, (660, 340))
-    screen.blit(block_center, (300, 530))
-    screen.blit(block_center2, (300, 100))
-    screen.blit(character, (x_pos, y_pos))
+        screen.blit(background, (0, 0))
+        screen.blit(block_side, (0,340))
+        screen.blit(block_side, (660, 340))
+        screen.blit(block_center, (300, 530))
+        screen.blit(block_center2, (300, 100))
+        screen.blit(character, (x_pos, y_pos))
 
     pygame.display.update()
     before_x = x_pos
