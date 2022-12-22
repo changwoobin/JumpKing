@@ -37,12 +37,12 @@ before_x = scrWidth/2 - 5
 before_y = 540 - character_height - 10
 
 # 테스트 용
-x_pos = 75
-y_pos = 300
+x_pos = 50
+y_pos = 200
 
 time_jump = 0
 end_time_jump = 0
-mappage = 5
+mappage = 4
 
 running = True
 
@@ -203,7 +203,6 @@ while running:
             y_pos = 44
             to_x = 0
 
-
         if y_pos < 94 and y_pos > 68 and x_pos > 292 and before_x < 292:
             to_x *= -1
         elif y_pos < 94 and y_pos > 68 and x_pos < 361 and before_x > 361:
@@ -214,7 +213,6 @@ while running:
         elif y_pos > 68 and before_y < 68 and x_pos > 292 and x_pos < 361:
             y_pos = 58
             to_x = 0
-
 
         if y_pos < 216 and y_pos > 180 and x_pos > 600 and before_x < 600:
             to_x *= -1
@@ -304,77 +302,85 @@ while running:
             y_pos = 540
     elif mappage == 4:
 
-        if y_pos < 164 and y_pos > 150 and x_pos > 128 and before_x < 128:
+        if y_pos < 186 and y_pos > 150 and x_pos > 128 and before_x < 128:
             to_x *= -1
-        elif y_pos < 164 and y_pos > 150 and x_pos < 164 and before_x > 164:
+        elif y_pos < 186 and y_pos > 150 and x_pos < 628 and before_x > 628:
             to_x *= -1
 
-        if y_pos < 128 and before_y > 164 and x_pos > 128 and x_pos < 628:
+        if y_pos < 186 and before_y > 186 and x_pos > 128 and x_pos < 628:
             to_y *= -1
         elif y_pos > 150 and before_y < 150 and x_pos > 128 and x_pos < 628:
             y_pos = 140
             to_x = 0
-        if y_pos < 718 and y_pos > 68 and x_pos > 600 and before_x < 600:
+
+######
+        if y_pos < 186 and y_pos > 68 and x_pos > 600 and before_x < 600:
             to_x *= -1
-        elif y_pos < 718 and y_pos > 68 and x_pos < 718 and before_x > 718:
+        elif y_pos < 186 and y_pos > 68 and x_pos < 669 and before_x > 669:
             to_x *= -1
 
-        if y_pos < 600 and before_y > 718 and x_pos > 600 and x_pos < 669:
+        if y_pos < 186 and before_y > 186 and x_pos > 600 and x_pos < 669:
             to_y *= -1
         elif y_pos > 68 and before_y < 68 and x_pos > 600 and x_pos < 669:
             y_pos = 58
             to_x = 0
-        if y_pos < 816 and y_pos > 200 and x_pos > 780 and before_x < 780:
+
+######
+        if y_pos < 236 and y_pos > 200 and x_pos > 780 and before_x < 780:
             to_x *= -1
-        elif y_pos < 816 and y_pos > 200 and x_pos < 816 and before_x > 816:
+        elif y_pos < 236 and y_pos > 200 and x_pos < 930 and before_x > 930:
             to_x *= -1
 
-        if y_pos < 780 and before_y > 816 and x_pos > 780 and x_pos < 916:
+        if y_pos < 236 and before_y > 236 and x_pos > 780 and x_pos < 930:
             to_y *= -1
-        elif y_pos > 200 and before_y < 200 and x_pos > 780 and x_pos < 916:
+        elif y_pos > 200 and before_y < 200 and x_pos > 780 and x_pos < 930:
             y_pos = 190
             to_x = 0
-        if y_pos < 216 and y_pos > 350 and x_pos > 180 and before_x < 180:
+####
+        if y_pos < 386 and y_pos > 350 and x_pos > 180 and before_x < 180:
             to_x *= -1
-        elif y_pos < 216 and y_pos > 350 and x_pos < 216 and before_x > 216:
+        elif y_pos < 386 and y_pos > 350 and x_pos < 264 and before_x > 264:
             to_x *= -1
 
-        if y_pos < 180 and before_y > 216 and x_pos > 180 and x_pos < 264:
+        if y_pos < 386 and before_y > 386 and x_pos > 180 and x_pos < 264:
             to_y *= -1
         elif y_pos > 350 and before_y < 350 and x_pos > 180 and x_pos < 264:
             y_pos = 340
             to_x = 0
-        if y_pos < 580 and y_pos > 326 and x_pos > 472 and before_x < 472:
+####
+        if y_pos < 434 and y_pos > 326 and x_pos > 472 and before_x < 472:
             to_x *= -1
-        elif y_pos < 472 and y_pos > 326 and x_pos < 580 and before_x > 580:
+        elif y_pos < 434 and y_pos > 326 and x_pos < 640 and before_x > 640:
             to_x *= -1
 
-        if y_pos < 472 and before_y > 580 and x_pos > 472 and x_pos < 640:
+        if y_pos < 434 and before_y > 434 and x_pos > 472 and x_pos < 640:
             to_y *= -1
         elif y_pos > 326 and before_y < 326 and x_pos > 472 and x_pos < 640:
             y_pos = 316
             to_x = 0
-        if y_pos < 465 and y_pos > 280 and x_pos > 257 and before_x < 257:
+####
+        if y_pos < 488 and y_pos > 280 and x_pos > 257 and before_x < 257:
             to_x *= -1
-        elif y_pos < 465 and y_pos > 280 and x_pos < 465 and before_x > 465:
+        elif y_pos < 488 and y_pos > 280 and x_pos < 326 and before_x > 326:
             to_x *= -1
 
-        if y_pos < 257 and before_y > 465 and x_pos > 257 and x_pos < 326:
+        if y_pos < 488 and before_y > 488 and x_pos > 257 and x_pos < 326:
             to_y *= -1
         elif y_pos > 280 and before_y < 280 and x_pos > 257 and x_pos < 326:
             y_pos = 270
             to_x = 0
 
-        if y_pos < 66 and y_pos > 450 and x_pos > 30 and before_x < 30:
+        if y_pos < 486 and y_pos > 450 and x_pos > 30 and before_x < 30:
             to_x *= -1
-        elif y_pos < 66 and y_pos > 450 and x_pos < 66 and before_x > 66:
+        elif y_pos < 486 and y_pos > 450 and x_pos < 75 and before_x > 75:
             to_x *= -1
 
-        if y_pos < 30 and before_y > 66 and x_pos > 30 and x_pos < 75:
+        if y_pos < 486 and before_y > 486 and x_pos > 30 and x_pos < 75:
             to_y *= -1
         elif y_pos > 450 and before_y < 450 and x_pos > 30 and x_pos < 75:
             y_pos = 440
             to_x = 0  # 5번맵
+
         surface.fill((255, 255, 255))  # R,G,B
 
         # draw Rectangle
